@@ -4,103 +4,308 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karan Kumar - Senior Automation Test Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for professional SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for the Instagram-like aesthetic */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAFA; /* Light Instagram background */
+            line-height: 1.6;
+        }
 
-    <header class="header">
-        <div class="container">
-            <h1>Karan Kumar</h1>
-            <p>Senior Automation Test Engineer</p>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        .header-shadow {
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08); /* Soft shadow like a mobile header */
+        }
+
+        .main-card {
+            max-width: 800px;
+            margin: 2rem auto;
+            border: 1px solid #DBDBDB; /* Subtle border for the main content area */
+        }
+
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c7c7c7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Responsive skill grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .skill-item-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .skill-item-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f7f7f7;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #E4405F; /* Instagram accent color */
+            border-radius: 2px;
+        }
+
+        /* Icon styling for skill tags */
+        .skill-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            color: #E4405F;
+        }
+
+        /* Experience timeline style */
+        .experience-item {
+            border-left: 3px solid #3897F0; /* Instagram blue accent */
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: #3897F0;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #3897F0;
+        }
+    </style>
+</head>
+<body class="selection:bg-[#E4405F] selection:text-white">
+
+    <!-- Header Section (Fixed/Sticky like a mobile app header) -->
+    <header class="sticky top-0 bg-white header-shadow z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
+            <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
+                Karan Kumar
+            </h1>
+            <div class="hidden md:block">
+                <nav class="main-nav">
+                    <ul class="flex space-x-6 text-sm font-medium">
+                        <li><a href="#about" class="nav-link text-gray-700 hover:text-[#E4405F] transition-colors">Profile</a></li>
+                        <li><a href="#experience" class="nav-link text-gray-700 hover:text-[#E4405F] transition-colors">Experience</a></li>
+                        <li><a href="#skills" class="nav-link text-gray-700 hover:text-[#E4405F] transition-colors">Skills</a></li>
+                        <li><a href="#education" class="nav-link text-gray-700 hover:text-[#E4405F] transition-colors">Education</a></li>
+                        <li><a href="#contact" class="nav-link text-gray-700 hover:text-[#E4405F] transition-colors">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container mx-auto px-4 pt-4 pb-12 max-w-7xl">
         
-        <section id="about" class="section">
-            <h2 class="section-title">PROFILE</h2>
-            [cite_start]<p>Experienced Automation QA Engineer with 7 years in Telecom and Insurance domains, specializing in UI, API, and backend testing using tools like Java, Selenium WebDriver, TestNG, and Postman. [cite: 6] [cite_start]Adept in backend validation through SQL, Oracle DB, and Unix for log analysis, job monitoring, and data integrity checks. [cite: 7] [cite_start]Proficient in designing and maintaining CI/CD pipelines using Jenkins and GitLab, automating application builds and deployments. [cite: 8] [cite_start]A strong team player in Agile environments, committed to delivering high-quality, automation-first solutions aligned with business and delivery goals. [cite: 12]</p>
-        </section>
+        <!-- Profile Card (Top of the page) -->
+        <section class="bg-white p-6 md:p-8 rounded-lg mb-6 header-shadow">
+            <div class="flex flex-col md:flex-row items-start md:items-center">
+                <!-- Profile Pic Placeholder (like a story highlight circle) -->
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-[#3897F0] p-0.5 flex items-center justify-center mb-4 md:mb-0 md:mr-6 flex-shrink-0 bg-gray-100">
+                    <span class="text-4xl text-gray-500 font-extrabold">KK</span>
+                </div>
+                
+                <!-- Title and Summary -->
+                <div class="flex-grow">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-1">Karan Kumar</h2>
+                    <p class="text-lg font-medium text-[#E4405F] mb-3">Senior Automation Test Engineer</p>
+                    <div class="flex flex-wrap gap-x-4 text-sm text-gray-600 mb-4">
+                        <span class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-1 text-[#3897F0]"></i> Karan97611@gmail.com</span>
+                        <span class="flex items-center"><i data-lucide="phone" class="w-4 h-4 mr-1 text-[#3897F0]"></i> +91-9761182859</span>
+                        <span class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-1 text-[#3897F0]"></i> Bengaluru</span>
+                    </div>
 
-        <section id="experience" class="section">
-            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
-            <div class="experience-item">
-                <h3>SDET - Automation and DevOps, Wipro (WDIS)</h3>
-                <p class="dates">02/2023 - Present</p>
-                <ul>
-                    [cite_start]<li>Engineered and managed end-to-end CI/CD pipelines with Jenkins and GitLab, automating over 90% of the manual deployment process which accelerated delivery workflows by 40%. [cite: 16]</li>
-                    [cite_start]<li>Developed a Selenium automation suite that ran after each deployment, reducing regression testing time by 75%. [cite: 17]</li>
-                    [cite_start]<li>Built and managed Docker containers on Linux servers, improving deployment consistency by 99% and eliminating environment-specific issues. [cite: 19]</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>Automation QA Engineer, Wipro Limited(HKT)</h3>
-                <p class="dates">03/2020 - 01/2023</p>
-                <ul>
-                    [cite_start]<li>Drove a 25% reduction in post-release defects by creating and executing comprehensive test plans. [cite: 23]</li>
-                    [cite_start]<li>Built the automation of the regression suite using Java and Selenium, which increased test coverage by 70% and slashed manual testing effort by 80%. [cite: 24]</li>
-                    [cite_start]<li>Validated over 50 RESTful API endpoints using Postman, which identified critical backend defects and improved system reliability by 20%. [cite: 25]</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>QA Engineer, Wipro Limited(Aviva)</h3>
-                <p class="dates">07/2018 - 12/2019</p>
-                <ul>
-                    [cite_start]<li>Performed comprehensive manual testing across web-based insurance applications, ensuring functionality, usability, and compliance. [cite: 30]</li>
-                    [cite_start]<li>Designed and executed detailed test plans, test cases, and test scenarios based on functional specifications and user stories. [cite: 31]</li>
-                </ul>
+                    <div id="about" class="text-sm text-gray-700 border-t pt-4 mt-4">
+                        <p class="font-semibold mb-2">Professional Summary</p>
+                        <p>Experienced Automation QA Engineer with 7 years in Telecom and Insurance domains, specializing in UI, API, and backend testing using tools like Java, Selenium WebDriver, TestNG, and Postman. Adept in backend validation through SQL, Oracle DB, and Unix for log analysis, job monitoring, and data integrity checks. Proficient in designing and maintaining CI/CD pipelines using Jenkins and GitLab, automating application builds and deployments. A strong team player in Agile environments, committed to delivering high-quality, automation-first solutions aligned with business and delivery goals.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <h2 class="section-title">SKILLS & TECH</h2>
-            <div class="skills-grid">
-                [cite_start]<div><strong>Programming:</strong> Core Java, SQL [cite: 64]</div>
-                [cite_start]<div><strong>Automation Tools:</strong> Selenium WebDriver, TestNG, JUnit [cite: 65]</div>
-                [cite_start]<div><strong>API Testing:</strong> Postman, SOAP UI [cite: 66]</div>
-                [cite_start]<div><strong>Frameworks:</strong> Page Object Model (POM), Data-Driven Framework [cite: 67]</div>
-                [cite_start]<div><strong>CI/CD & VCS:</strong> Jenkins, Git, GitHub, GitLab, Apache Maven [cite: 68]</div>
-                [cite_start]<div><strong>Databases:</strong> Oracle SQL, MySQL [cite: 69]</div>
-                [cite_start]<div><strong>Containerization:</strong> Docker, Tomcat, Linux [cite: 70]</div>
-                [cite_start]<div><strong>Project Management:</strong> JIRA, Agile/Scrum [cite: 71]</div>
-                [cite_start]<div><strong>IDE:</strong> VSCode, Eclipse, STS [cite: 72]</div>
-            </div>
-        </section>
+        <!-- Main Content Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-        <section id="education" class="section">
-            <h2 class="section-title">EDUCATION</h2>
-            <div class="education-item">
-                <h3>M.Tech in Software Engineering, BITS Pilani</h3>
-                [cite_start]<p class="dates">04/2019 - 12/2022 [cite: 35]</p>
+            <!-- Left Column: Experience (More detailed, like posts) -->
+            <div class="lg:col-span-2">
+                <section id="experience" class="bg-white p-6 rounded-lg shadow-md mb-6">
+                    <h2 class="section-title text-xl font-bold text-gray-800">PROFESSIONAL EXPERIENCE</h2>
+                    
+                    <!-- Job 1 -->
+                    <div class="experience-item">
+                        <h3 class="text-lg font-semibold text-gray-900">SDET - Automation and DevOps, Wipro (WDIS)</h3>
+                        <p class="dates text-sm text-gray-500 mb-3">02/2023 - Present</p>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-700 text-sm">
+                            <li>Engineered and managed end-to-end CI/CD pipelines with <strong class="text-[#E4405F]">Jenkins</strong> and <strong class="text-[#E4405F]">GitLab</strong>, automating over 90% of the manual deployment process which accelerated delivery workflows by 40%.</li>
+                            <li>Developed a <strong class="text-[#E4405F]">Selenium</strong> automation suite that ran after each deployment, reducing regression testing time by 75%.</li>
+                            <li>Built and managed <strong class="text-[#E4405F]">Docker</strong> containers on Linux servers, improving deployment consistency by 99% and eliminating environment-specific issues.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 2 -->
+                    <div class="experience-item">
+                        <h3 class="text-lg font-semibold text-gray-900">Automation QA Engineer, Wipro Limited(HKT)</h3>
+                        <p class="dates text-sm text-gray-500 mb-3">03/2020 - 01/2023</p>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-700 text-sm">
+                            <li>Drove a 25% reduction in post-release defects by creating and executing comprehensive test plans.</li>
+                            <li>Built the automation of the regression suite using <strong class="text-[#E4405F]">Java</strong> and <strong class="text-[#E4405F]">Selenium</strong>, which increased test coverage by 70%.</li>
+                            <li>Validated over 50 RESTful API endpoints using <strong class="text-[#E4405F]">Postman</strong>, which identified critical backend defects and improved system reliability by 20%.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Job 3 -->
+                    <div class="experience-item">
+                        <h3 class="text-lg font-semibold text-gray-900">QA Engineer, Wipro Limited(Aviva)</h3>
+                        <p class="dates text-sm text-gray-500 mb-3">07/2018 - 12/2019</p>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-700 text-sm">
+                            <li>Performed comprehensive manual testing across web-based insurance applications, ensuring functionality, usability, and compliance.</li>
+                            <li>Designed and executed detailed test plans, test cases, and test scenarios based on functional specifications and user stories.</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-            <div class="education-item">
-                <h3>Bachelor of Computer Applications, CCS University, Meerut</h3>
-                [cite_start]<p class="dates">08/2015 - 07/2018 [cite: 35, 36]</p>
+
+            <!-- Right Column: Skills, Education & Contact (Like profile highlights/details) -->
+            <div class="lg:col-span-1 space-y-6">
+
+                <!-- Skills Section -->
+                <section id="skills" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="section-title text-xl font-bold text-gray-800">SKILLS & TECH</h2>
+                    <div class="space-y-4">
+                        
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="code" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">Programming:</strong> <span class="text-sm text-gray-600">Core Java, SQL</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="bot" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">Automation Tools:</strong> <span class="text-sm text-gray-600">Selenium WebDriver, TestNG, JUnit</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="activity" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">API Testing:</strong> <span class="text-sm text-gray-600">Postman, SOAP UI</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="layout-grid" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">Frameworks:</strong> <span class="text-sm text-gray-600">POM, Data-Driven</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="git-branch" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">CI/CD & VCS:</strong> <span class="text-sm text-gray-600">Jenkins, Git, GitLab, Maven</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="database" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">Databases:</strong> <span class="text-sm text-gray-600">Oracle SQL, MySQL</span>
+                        </div>
+                        <div class="skill-item-card p-3 rounded-lg border border-gray-100">
+                            <i data-lucide="box" class="skill-icon w-5 h-5"></i>
+                            <strong class="text-gray-700">Containerization:</strong> <span class="text-sm text-gray-600">Docker, Tomcat, Linux</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section id="education" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="section-title text-xl font-bold text-gray-800">EDUCATION</h2>
+                    <div class="space-y-4">
+                        <div class="border-b pb-3">
+                            <h3 class="font-semibold text-gray-800">M.Tech in Software Engineering, BITS Pilani</h3>
+                            <p class="dates text-sm text-gray-500">04/2019 - 12/2022</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Bachelor of Computer Applications, CCS University, Meerut</h3>
+                            <p class="dates text-sm text-gray-500">08/2015 - 07/2018</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact & Footer Section (Like a final block on a profile) -->
+                <section id="contact" class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="section-title text-xl font-bold text-gray-800">CONNECT</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-700">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-[#3897F0]"></i>
+                            <a href="mailto:Karan97611@gmail.com" class="hover:text-[#E4405F]">Karan97611@gmail.com</a>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i data-lucide="linkedin" class="w-5 h-5 mr-3 text-[#3897F0]"></i>
+                            <a href="https://www.linkedin.com/in/karan97611" target="_blank" class="hover:text-[#E4405F]">linkedin.com/in/karan97611</a>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i data-lucide="github" class="w-5 h-5 mr-3 text-[#3897F0]"></i>
+                            <a href="https://github.com/Karan97611" target="_blank" class="hover:text-[#E4405F]">Karan97611 GitHub</a>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
 
     </main>
     
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="section-title">CONTACT</h2>
-            [cite_start]<p>Email: <a href="mailto:Karan97611@gmail.com">Karan97611@gmail.com</a> [cite: 3]</p>
-            [cite_start]<p>Phone: +91-9761182859 [cite: 3]</p>
-            [cite_start]<p>LinkedIn: <a href="https://www.linkedin.com/in/karan97611" target="_blank">linkedin.com/in/karan97611</a> [cite: 4]</p>
-            [cite_start]<p class="location">Location: Bengaluru [cite: 4]</p>
-        </div>
-    </footer>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-    <script src="script.js"></script>
+        // 1. Smooth Scrolling Functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 2. Initialize Tailwind and Font (assuming Inter is loaded from a source)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'insta-blue': '#3897F0',
+                        'insta-pink': '#E4405F',
+                        'insta-bg': '#FAFAFA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </body>
-</html>
